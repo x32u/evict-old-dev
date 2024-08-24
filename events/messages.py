@@ -1,7 +1,7 @@
 from discord.ext import commands 
-import discord, json, asyncio, datetime, re
+import discord, asyncio, datetime, re
 from uwuipy import uwuipy
-from discord import Embed, Message, User
+from discord import Message, User
 from reposter.reposter import Reposter
 from patches.permissions import Perms
 from collections import defaultdict

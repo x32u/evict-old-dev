@@ -1,11 +1,8 @@
-import discord, datetime, aiohttp, logging, asyncio, contextlib, io
+import discord, datetime, asyncio, contextlib, io
 from collections import defaultdict
 from discord.ext import commands, tasks
 from discord import Embed
-from asyncio import log
 from patches import functions
-
-log = logging.getLogger(__name__)
 
 @tasks.loop(seconds=5)
 async def servers_check(bot: commands.Bot):
