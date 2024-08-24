@@ -11,7 +11,7 @@ class EvictContext(Context):
   
   async def getprefix(bot, message):
        
-       if not message.guild: return ";"
+       if not message.guild: return ","
        
        check = await bot.db.fetchrow("SELECT * FROM selfprefix WHERE user_id = $1", message.author.id) 
        if check: selfprefix = check["prefix"]
@@ -19,10 +19,10 @@ class EvictContext(Context):
        res = await bot.db.fetchrow("SELECT * FROM prefixes WHERE guild_id = $1", message.guild.id) 
        if res: guildprefix = res["prefix"]
        
-       else: guildprefix = ";"    
+       else: guildprefix = ","    
        
        if not check and res: selfprefix = res["prefix"]
-       elif not check and not res: selfprefix = ";"
+       elif not check and not res: selfprefix = ","
        
        return guildprefix, selfprefix 
 
